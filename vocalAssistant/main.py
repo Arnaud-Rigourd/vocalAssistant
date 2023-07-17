@@ -80,13 +80,14 @@ def _generate_audio_from_text(gpt_answer: str) -> bytes:
             model="eleven_monolingual_v1"
         )
         logging.debug("_generate_audio_from_text: call to Eleven Labs API passed")
+        return audio
+
     except:
         logging.error("Call to Eleven Labs API failed")
+        # raise
 
-    return audio
 
-
-def _get_remaining_characters() -> int:
+def _get_remaining_characters() -> str:
     url = "https://api.elevenlabs.io/v1/user/subscription"
 
     headers = {
