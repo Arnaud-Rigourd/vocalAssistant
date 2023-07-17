@@ -1,9 +1,9 @@
 import logging
 import os
 
-import openai as openai
+import openai
 from dotenv import load_dotenv
-from elevenlabs import generate, play
+from elevenlabs import generate
 
 load_dotenv()
 
@@ -15,12 +15,11 @@ logging.basicConfig(
 )
 
 
-def ask_chatbot():
-    instructions = input("Parlez : ")
-    initial_prompt = _setup_initial_GPT_prompt()
-    GPTanswer = interact_with_GPT(initial_prompt, instructions)
-    audio = _generate_audio_from_text(GPTanswer)
-    return play(audio)
+def ask_chatbot(instructions):
+    gpt_answer = interact_with_GPT(instructions)
+    # audio = _generate_audio_from_text(gpt_answer[6:])
+    # play(audio)
+    return gpt_answer
 
 
 def _setup_initial_GPT_prompt() -> str:
@@ -31,7 +30,7 @@ def _setup_initial_GPT_prompt() -> str:
 
 
 def interact_with_GPT(instructions: str = None) -> str:
-    """Send the use prompt to GPT4 API and return a boolean to indicate if the API request worked"""
+    """Send the use prompt to GPT3.5-turbo API and return the response"""
     openai.api_key = os.getenv("OPENAI_API_KEY")
     initial_prompt = _setup_initial_GPT_prompt()
     response = openai.ChatCompletion.create(
@@ -45,20 +44,20 @@ def interact_with_GPT(instructions: str = None) -> str:
 
     reply = response['choices'][0]['message']['content']
 
-    return reply
+    # store instructions and reply in a JSON file
+
+    return f"GPT : {reply}"
 
 
-def _generate_audio_from_text(GPTanswer: str) -> bytes:
+def _generate_audio_from_text(gpt_answer: str) -> bytes:
     try:
         audio = generate(
-            text=GPTanswer,
+            text=gpt_answer,
             api_key=os.getenv('ELEVEN_API_KEY'),
             voice="Elli",
             model="eleven_monolingual_v1"
         )
-
         logging.debug("_generate_audio_from_text: call to Eleven Labs API passed")
-
     except:
         logging.error("Call to Eleven Labs API failed")
 
@@ -66,6 +65,12 @@ def _generate_audio_from_text(GPTanswer: str) -> bytes:
 
 
 if __name__ == '__main__':
-    prompt = "Say that everything works folks !"
-    gpt_answer = interact_with_GPT(prompt)
-    print(gpt_answer)
+    instructions = input("Parlez : ")
+    while True:
+        if "fin de la discussion" in instructions.lower():
+            break
+        response = ask_chatbot(instructions)
+        print(response)
+        instructions = input("Parlez : ")
+
+#     clear JSON file eventually
