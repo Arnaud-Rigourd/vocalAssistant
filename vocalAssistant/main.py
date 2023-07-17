@@ -1,9 +1,17 @@
+import logging
 import os
 
 from dotenv import load_dotenv
 from elevenlabs import generate, play
 
 load_dotenv()
+
+logging.basicConfig(
+    level=logging.DEBUG,
+    filename='app.log',
+    filemode='w',
+    format="%(asctime)s - %(levelname)s : %(message)s",
+)
 
 
 def ask_chatbot():
@@ -29,16 +37,20 @@ def _get_GPT_answer(GPT_prompt: str) -> bool:
     pass
 
 
-def _generate_audio_from_text(GPTanswer: str):
+def _generate_audio_from_text(GPTanswer: str) -> bytes:
     audio = generate(
         text=GPTanswer,
         api_key=os.environ.get('ELEVEN_API_KEY', 'default_value'),
         voice="Elli",
         model="eleven_monolingual_v1"
     )
-
-    return audio
+    try:
+        logging.debug("_generate_audio_from_text: call to Eleven Labs API passed")
+        return audio
+    except:
+        logging.error("Call to Eleven Labs API failed")
 
 
 if __name__ == '__main__':
-    pass
+    audio = _generate_audio_from_text("hey")
+    print(type(audio))
