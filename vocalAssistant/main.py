@@ -1,9 +1,11 @@
+import json
 import logging
 import os
 from functools import lru_cache
 from pathlib import Path
 
 import openai
+import requests as requests
 from dotenv import load_dotenv
 from elevenlabs import generate, play
 from tinydb import TinyDB
@@ -22,14 +24,16 @@ db = TinyDB(f"{CUR_DIR}/history.json", indent=4)
 chats = db.table("Chats")
 
 
-def ask_chatbot(instructions) -> None:
-    print("Thinking...")
+def ask_chatbot(instructions) -> int:
+    print("Thinking 🤔...")
     gpt_answer = interact_with_GPT(instructions)
     logging.debug("interact_with_GPT: success")
+    print("Warming up the voice 🎤...")
     audio = _generate_audio_from_text(gpt_answer[6:])
     logging.debug("_generate_audio_from_text: success")
     print(gpt_answer)
-    return play(audio)
+    play(audio)
+    return _get_remaining_characters()
 
 
 @lru_cache
@@ -80,6 +84,22 @@ def _generate_audio_from_text(gpt_answer: str) -> bytes:
         logging.error("Call to Eleven Labs API failed")
 
     return audio
+
+
+def _get_remaining_characters() -> int:
+    url = "https://api.elevenlabs.io/v1/user/subscription"
+
+    headers = {
+        "Accept": "application/json",
+        "xi-api-key": os.getenv('ELEVEN_API_KEY')
+    }
+
+    response = requests.get(url, headers=headers)
+
+    response_to_dict = json.loads(response.text)
+    remaining_characters = 10_000 - response_to_dict["character_count"]
+
+    return f"remaining characters: {remaining_characters}"
 
 
 if __name__ == '__main__':
