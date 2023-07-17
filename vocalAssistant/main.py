@@ -41,5 +41,4 @@ def _generate_audio_from_text(GPTanswer: str):
 
 
 if __name__ == '__main__':
-    audio_test = _generate_audio_from_text("Coucou tout le monde !")
-    play(audio_test)
+    pass
