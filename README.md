@@ -30,9 +30,9 @@ These environment variables can be set in a `.env` file.
 
 To use this script, you can run the following command in your terminal:
 
-\`\`\`bash
+```bash
 python3 main.py
-\`\`\`
+```
 
 ## Tests
 
