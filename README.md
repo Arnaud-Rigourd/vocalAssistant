@@ -3,7 +3,6 @@
 This project contains a Python script that utilizes the OpenAI API to generate responses to user instructions. The generated responses are then converted to audio using the Eleven Labs API, and the number of remaining characters for the current month is displayed.
 
 <br />
-<br />
 
 ## Features
 
@@ -12,7 +11,6 @@ This project contains a Python script that utilizes the OpenAI API to generate r
 3. Handling interactions with a TinyDB database to log messages exchanged with the chatbot.
 4. Displaying the number of remaining characters for the current month on the Eleven Labs API.
 
-<br />
 <br />
 
 ## Installation
@@ -23,7 +21,6 @@ Clone this repository in your local environment and ensure you have Python 3.7 o
 pip install -r requirements.txt
 ```
 
-<br />
 <br />
 
 ## Configuration
@@ -36,7 +33,6 @@ This script requires some environment variables to function correctly:
 These environment variables can be set in a `.env` file.
 
 <br />
-<br />
 
 ## Usage
 
@@ -47,13 +43,11 @@ python3 main.py
 ```
 
 <br />
-<br />
 
 ## Tests
 
 The unit tests for this script are not yet implemented, but feel free to contribute some!
 
-<br />
 <br />
 
 ## Contribution
