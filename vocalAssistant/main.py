@@ -12,27 +12,26 @@ from tinydb import TinyDB
 
 load_dotenv()
 
+CUR_DIR = Path(__file__).resolve().parent
+
 logging.basicConfig(
     level=logging.DEBUG,
-    filename='app.log',
-    filemode='w',
+    filename=f"{CUR_DIR}/app.log",
+    filemode='a',
     format="%(asctime)s - %(levelname)s : %(message)s",
 )
 
-CUR_DIR = Path(__file__).resolve().parent
 db = TinyDB(f"{CUR_DIR}/history.json", indent=4)
 chats = db.table("Chats")
 
 
-def ask_chatbot(instructions) -> int:
+def ask_chatbot(instructions) -> str:
     print("Thinking 🤔...")
     gpt_answer = interact_with_GPT(instructions)
     logging.debug("interact_with_GPT: success")
     print("Warming up the voice 🎤...")
-    audio = _generate_audio_from_text(gpt_answer[6:])
+    _generate_audio_from_text(gpt_answer[6:])
     logging.debug("_generate_audio_from_text: success")
-    print(gpt_answer)
-    play(audio)
     return _get_remaining_characters()
 
 
@@ -44,7 +43,7 @@ def _get_initial_GPT_prompt() -> str:
     return initial_prompt
 
 
-def interact_with_GPT(instructions: str = None) -> str:
+def interact_with_GPT(instructions: str) -> str:
     """Send the use prompt to GPT3.5-turbo API and return the response"""
     openai.api_key = os.getenv("OPENAI_API_KEY")
     initial_prompt = _get_initial_GPT_prompt()
@@ -71,7 +70,7 @@ def interact_with_GPT(instructions: str = None) -> str:
     return f"GPT : {reply}"
 
 
-def _generate_audio_from_text(gpt_answer: str) -> bytes:
+def _generate_audio_from_text(gpt_answer: str) -> None:
     try:
         audio = generate(
             text=gpt_answer,
@@ -79,11 +78,14 @@ def _generate_audio_from_text(gpt_answer: str) -> bytes:
             voice="Elli",
             model="eleven_monolingual_v1"
         )
-        logging.debug("_generate_audio_from_text: call to Eleven Labs API passed")
-        return audio
+        logging.debug("_generate_audio_from_text(): call to Eleven Labs API passed")
+        print(gpt_answer)
+        play(audio)
+
+        return None
 
     except:
-        logging.error("Call to Eleven Labs API failed")
+        logging.error("_generate_audio_from_text(): Call to Eleven Labs API failed")
         # raise
 
 
@@ -97,8 +99,8 @@ def _get_remaining_characters() -> str:
 
     response = requests.get(url, headers=headers)
 
-    response_to_dict = json.loads(response.text)
-    remaining_characters = 10_000 - response_to_dict["character_count"]
+    response_to_dict: dict = json.loads(response.text)
+    remaining_characters: int = 10_000 - response_to_dict["character_count"]
 
     return f"remaining characters: {remaining_characters}"
 
