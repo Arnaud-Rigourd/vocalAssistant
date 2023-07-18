@@ -19,7 +19,7 @@ logging.basicConfig(
     filename=f"{CUR_DIR}/app.log",
     filemode='a',
     format="%(asctime)s,%(msecs)d %(levelname)-8s [%(filename)s:%(lineno)d] %(message)s",
-    datefmt='%Y-%m-%d:%H:%M:%S',
+    datefmt='%Y-%m-%d %H:%M:%S',
 )
 
 db = TinyDB(f"{CUR_DIR}/history.json", indent=4)
