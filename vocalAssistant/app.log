@@ -65,3 +65,72 @@
 2023-07-18 11:05:37,567 - DEBUG : _generate_audio_from_text: success
 2023-07-18 11:05:37,570 - DEBUG : Starting new HTTPS connection (1): api.elevenlabs.io:443
 2023-07-18 11:05:37,946 - DEBUG : https://api.elevenlabs.io:443 "GET /v1/user/subscription HTTP/1.1" 200 419
+2023-07-18 12:04:22,300 - DEBUG : message='Request to OpenAI API' method=post path=https://api.openai.com/v1/chat/completions
+2023-07-18 12:04:22,300 - DEBUG : api_version=None data='{"model": "gpt-3.5-turbo", "messages": [{"role": "system", "content": "Tu es un chatbot dont le r\\u00f4le est de m\'assister dans mes probl\\u00e9matiques quotidiennes. Tu es notamment sp\\u00e9cialis\\u00e9 sur le langage Python depuis plus de 20 ans et tu as une connaissance parfaite de toutes les librairies, modules et packages permettant d\'optimiser les fonctions que tu me proposes pour r\\u00e9pondre \\u00e0 mes demandes. Tu agis en tant que consultant perfectionniste et a pour but de toujours apporter la r\\u00e9ponse la plus pr\\u00e9cise. Pour atteindre cet objectif, tu n\'h\\u00e9sites pas \\u00e0 me poser des questions si ma demande n\'est pas assez claire pour que tu puisses y r\\u00e9pondre parfaitement. Je vais t\'envoyer des prompts en fran\\u00e7ais, je veux que tu me r\\u00e9pondes EN ANGLAIS \\u00e0 chaque fois. Ne r\\u00e9ponds pas \\u00e0 ce message qui a pour but de t\'indiquer ton role. R\\u00e9ponds \\u00e0 partir du prochain prompt qui te sera envoy\\u00e9. Tes r\\u00e9ponse ne doivent \\u00eatres concises et ne doivent ABSOLUMENT PAS d\\u00e9passer les 10000 caract\\u00e8res."}, {"role": "user", "content": "Dis-moi, bonjour"}], "temperature": 1}' message='Post details'
+2023-07-18 12:04:22,301 - DEBUG : Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2023-07-18 12:04:22,331 - DEBUG : Starting new HTTPS connection (1): api.openai.com:443
+2023-07-18 12:04:23,118 - DEBUG : https://api.openai.com:443 "POST /v1/chat/completions HTTP/1.1" 200 None
+2023-07-18 12:04:23,119 - DEBUG : message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=540 request_id=5e2b2ef8e76a215f107a5f87cf81024a response_code=200
+2023-07-18 12:04:23,122 - DEBUG : interact_with_gpt(): Success
+2023-07-18 12:04:23,123 - DEBUG : interact_with_GPT: success
+2023-07-18 12:04:23,151 - DEBUG : Starting new HTTPS connection (1): api.elevenlabs.io:443
+2023-07-18 12:04:24,211 - DEBUG : https://api.elevenlabs.io:443 "POST /v1/text-to-speech/MF3mGyEYCl7XYWbV9V6O HTTP/1.1" 200 13583
+2023-07-18 12:04:24,213 - DEBUG : _generate_audio_from_text(): call to Eleven Labs API passed
+2023-07-18 12:04:26,930 - DEBUG : _generate_audio_from_text: success
+2023-07-18 12:04:26,936 - DEBUG : Starting new HTTPS connection (1): api.elevenlabs.io:443
+2023-07-18 12:04:27,116 - DEBUG : https://api.elevenlabs.io:443 "GET /v1/user/subscription HTTP/1.1" 200 419
+2023-07-18 12:04:27,117 - DEBUG : API request : Success
+2023-07-18 12:04:34,537 - DEBUG : message='Request to OpenAI API' method=post path=https://api.openai.com/v1/chat/completions
+2023-07-18 12:04:34,537 - DEBUG : api_version=None data='{"model": "gpt-3.5-turbo", "messages": [{"role": "system", "content": "Tu es un chatbot dont le r\\u00f4le est de m\'assister dans mes probl\\u00e9matiques quotidiennes. Tu es notamment sp\\u00e9cialis\\u00e9 sur le langage Python depuis plus de 20 ans et tu as une connaissance parfaite de toutes les librairies, modules et packages permettant d\'optimiser les fonctions que tu me proposes pour r\\u00e9pondre \\u00e0 mes demandes. Tu agis en tant que consultant perfectionniste et a pour but de toujours apporter la r\\u00e9ponse la plus pr\\u00e9cise. Pour atteindre cet objectif, tu n\'h\\u00e9sites pas \\u00e0 me poser des questions si ma demande n\'est pas assez claire pour que tu puisses y r\\u00e9pondre parfaitement. Je vais t\'envoyer des prompts en fran\\u00e7ais, je veux que tu me r\\u00e9pondes EN ANGLAIS \\u00e0 chaque fois. Ne r\\u00e9ponds pas \\u00e0 ce message qui a pour but de t\'indiquer ton role. R\\u00e9ponds \\u00e0 partir du prochain prompt qui te sera envoy\\u00e9. Tes r\\u00e9ponse ne doivent \\u00eatres concises et ne doivent ABSOLUMENT PAS d\\u00e9passer les 10000 caract\\u00e8res."}, {"role": "user", "content": "Dis-moi, bonjour"}, {"role": "assistant", "content": "Hello! How can I assist you today?"}, {"role": "user", "content": "Dis-moi quel jour nous sommes"}], "temperature": 1}' message='Post details'
+2023-07-18 12:04:35,372 - DEBUG : https://api.openai.com:443 "POST /v1/chat/completions HTTP/1.1" 200 None
+2023-07-18 12:04:35,374 - DEBUG : message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=491 request_id=2250648840f27cbb204210cc644955c9 response_code=200
+2023-07-18 12:04:35,374 - DEBUG : interact_with_gpt(): Success
+2023-07-18 12:04:35,375 - DEBUG : interact_with_GPT: success
+2023-07-18 12:04:35,379 - DEBUG : Starting new HTTPS connection (1): api.elevenlabs.io:443
+2023-07-18 12:04:36,294 - DEBUG : https://api.elevenlabs.io:443 "POST /v1/text-to-speech/MF3mGyEYCl7XYWbV9V6O HTTP/1.1" 200 9195
+2023-07-18 12:04:36,297 - DEBUG : _generate_audio_from_text(): call to Eleven Labs API passed
+2023-07-18 12:04:37,730 - DEBUG : _generate_audio_from_text: success
+2023-07-18 12:04:37,733 - DEBUG : Starting new HTTPS connection (1): api.elevenlabs.io:443
+2023-07-18 12:04:37,911 - DEBUG : https://api.elevenlabs.io:443 "GET /v1/user/subscription HTTP/1.1" 200 419
+2023-07-18 12:04:37,912 - DEBUG : API request : Success
+2023-07-18 12:04:45,198 - DEBUG : message='Request to OpenAI API' method=post path=https://api.openai.com/v1/chat/completions
+2023-07-18 12:04:45,198 - DEBUG : api_version=None data='{"model": "gpt-3.5-turbo", "messages": [{"role": "system", "content": "Tu es un chatbot dont le r\\u00f4le est de m\'assister dans mes probl\\u00e9matiques quotidiennes. Tu es notamment sp\\u00e9cialis\\u00e9 sur le langage Python depuis plus de 20 ans et tu as une connaissance parfaite de toutes les librairies, modules et packages permettant d\'optimiser les fonctions que tu me proposes pour r\\u00e9pondre \\u00e0 mes demandes. Tu agis en tant que consultant perfectionniste et a pour but de toujours apporter la r\\u00e9ponse la plus pr\\u00e9cise. Pour atteindre cet objectif, tu n\'h\\u00e9sites pas \\u00e0 me poser des questions si ma demande n\'est pas assez claire pour que tu puisses y r\\u00e9pondre parfaitement. Je vais t\'envoyer des prompts en fran\\u00e7ais, je veux que tu me r\\u00e9pondes EN ANGLAIS \\u00e0 chaque fois. Ne r\\u00e9ponds pas \\u00e0 ce message qui a pour but de t\'indiquer ton role. R\\u00e9ponds \\u00e0 partir du prochain prompt qui te sera envoy\\u00e9. Tes r\\u00e9ponse ne doivent \\u00eatres concises et ne doivent ABSOLUMENT PAS d\\u00e9passer les 10000 caract\\u00e8res."}, {"role": "user", "content": "Dis-moi, bonjour"}, {"role": "assistant", "content": "Hello! How can I assist you today?"}, {"role": "user", "content": "Dis-moi quel jour nous sommes"}, {"role": "assistant", "content": "Today is [current date]."}, {"role": "user", "content": "Je voulais parler du jour de la semaine"}], "temperature": 1}' message='Post details'
+2023-07-18 12:04:46,531 - DEBUG : https://api.openai.com:443 "POST /v1/chat/completions HTTP/1.1" 200 None
+2023-07-18 12:04:46,532 - DEBUG : message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=733 request_id=78dbd1e8778bf50ecdb1e12ff048226d response_code=200
+2023-07-18 12:04:46,533 - DEBUG : interact_with_gpt(): Success
+2023-07-18 12:04:46,533 - DEBUG : interact_with_GPT: success
+2023-07-18 12:04:46,537 - DEBUG : Starting new HTTPS connection (1): api.elevenlabs.io:443
+2023-07-18 12:04:47,866 - DEBUG : https://api.elevenlabs.io:443 "POST /v1/text-to-speech/MF3mGyEYCl7XYWbV9V6O HTTP/1.1" 200 26331
+2023-07-18 12:04:47,876 - DEBUG : _generate_audio_from_text(): call to Eleven Labs API passed
+2023-07-18 12:04:51,480 - DEBUG : _generate_audio_from_text: success
+2023-07-18 12:04:51,483 - DEBUG : Starting new HTTPS connection (1): api.elevenlabs.io:443
+2023-07-18 12:04:51,660 - DEBUG : https://api.elevenlabs.io:443 "GET /v1/user/subscription HTTP/1.1" 200 419
+2023-07-18 12:04:51,661 - DEBUG : API request : Success
+2023-07-18:12:18:05,551 DEBUG    [util.py:60] message='Request to OpenAI API' method=post path=https://api.openai.com/v1/chat/completions
+2023-07-18:12:18:05,551 DEBUG    [util.py:60] api_version=None data='{"model": "gpt-3.5-turbo", "messages": [{"role": "system", "content": "Tu es un chatbot dont le r\\u00f4le est de m\'assister dans mes probl\\u00e9matiques quotidiennes. Tu es notamment sp\\u00e9cialis\\u00e9 sur le langage Python depuis plus de 20 ans et tu as une connaissance parfaite de toutes les librairies, modules et packages permettant d\'optimiser les fonctions que tu me proposes pour r\\u00e9pondre \\u00e0 mes demandes. Tu agis en tant que consultant perfectionniste et a pour but de toujours apporter la r\\u00e9ponse la plus pr\\u00e9cise. Pour atteindre cet objectif, tu n\'h\\u00e9sites pas \\u00e0 me poser des questions si ma demande n\'est pas assez claire pour que tu puisses y r\\u00e9pondre parfaitement. Je vais t\'envoyer des prompts en fran\\u00e7ais, je veux que tu me r\\u00e9pondes EN ANGLAIS \\u00e0 chaque fois. Ne r\\u00e9ponds pas \\u00e0 ce message qui a pour but de t\'indiquer ton role. R\\u00e9ponds \\u00e0 partir du prochain prompt qui te sera envoy\\u00e9. Tes r\\u00e9ponse ne doivent \\u00eatres concises et ne doivent ABSOLUMENT PAS d\\u00e9passer les 10000 caract\\u00e8res."}, {"role": "user", "content": "Raconte-moi une blague courte, Jean phrases maximum"}], "temperature": 1}' message='Post details'
+2023-07-18:12:18:05,552 DEBUG    [retry.py:282] Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2023-07-18:12:18:05,619 DEBUG    [connectionpool.py:1048] Starting new HTTPS connection (1): api.openai.com:443
+2023-07-18:12:18:06,587 DEBUG    [connectionpool.py:546] https://api.openai.com:443 "POST /v1/chat/completions HTTP/1.1" 200 None
+2023-07-18:12:18:06,588 DEBUG    [util.py:60] message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=602 request_id=8a61ce92da7c67ec7b174cebd4c9615e response_code=200
+2023-07-18:12:18:06,591 DEBUG    [main.py:73] interact_with_gpt(): Success
+2023-07-18:12:18:06,592 DEBUG    [main.py:33] interact_with_GPT: success
+2023-07-18:12:18:06,624 DEBUG    [connectionpool.py:1048] Starting new HTTPS connection (1): api.elevenlabs.io:443
+2023-07-18:12:18:21,232 DEBUG    [connectionpool.py:546] https://api.elevenlabs.io:443 "POST /v1/text-to-speech/MF3mGyEYCl7XYWbV9V6O HTTP/1.1" 200 26958
+2023-07-18:12:18:21,242 DEBUG    [main.py:93] _generate_audio_from_text(): call to Eleven Labs API passed
+2023-07-18:12:18:25,568 DEBUG    [main.py:36] _generate_audio_from_text: success
+2023-07-18:12:18:25,572 DEBUG    [connectionpool.py:1048] Starting new HTTPS connection (1): api.elevenlabs.io:443
+2023-07-18:12:18:25,737 DEBUG    [connectionpool.py:546] https://api.elevenlabs.io:443 "GET /v1/user/subscription HTTP/1.1" 200 419
+2023-07-18:12:18:25,738 DEBUG    [main.py:119] API request : Success
+2023-07-18:12:18:35,568 DEBUG    [util.py:60] message='Request to OpenAI API' method=post path=https://api.openai.com/v1/chat/completions
+2023-07-18:12:18:35,568 DEBUG    [util.py:60] api_version=None data='{"model": "gpt-3.5-turbo", "messages": [{"role": "system", "content": "Tu es un chatbot dont le r\\u00f4le est de m\'assister dans mes probl\\u00e9matiques quotidiennes. Tu es notamment sp\\u00e9cialis\\u00e9 sur le langage Python depuis plus de 20 ans et tu as une connaissance parfaite de toutes les librairies, modules et packages permettant d\'optimiser les fonctions que tu me proposes pour r\\u00e9pondre \\u00e0 mes demandes. Tu agis en tant que consultant perfectionniste et a pour but de toujours apporter la r\\u00e9ponse la plus pr\\u00e9cise. Pour atteindre cet objectif, tu n\'h\\u00e9sites pas \\u00e0 me poser des questions si ma demande n\'est pas assez claire pour que tu puisses y r\\u00e9pondre parfaitement. Je vais t\'envoyer des prompts en fran\\u00e7ais, je veux que tu me r\\u00e9pondes EN ANGLAIS \\u00e0 chaque fois. Ne r\\u00e9ponds pas \\u00e0 ce message qui a pour but de t\'indiquer ton role. R\\u00e9ponds \\u00e0 partir du prochain prompt qui te sera envoy\\u00e9. Tes r\\u00e9ponse ne doivent \\u00eatres concises et ne doivent ABSOLUMENT PAS d\\u00e9passer les 10000 caract\\u00e8res."}, {"role": "user", "content": "Raconte-moi une blague courte, Jean phrases maximum"}, {"role": "assistant", "content": "Why don\'t scientists trust atoms?\\n\\nBecause they make up everything!"}, {"role": "user", "content": "C\'est nul"}], "temperature": 1}' message='Post details'
+2023-07-18:12:18:37,921 DEBUG    [connectionpool.py:546] https://api.openai.com:443 "POST /v1/chat/completions HTTP/1.1" 200 None
+2023-07-18:12:18:37,922 DEBUG    [util.py:60] message='OpenAI API response' path=https://api.openai.com/v1/chat/completions processing_ms=2060 request_id=ceb9a4d8771a06358608843c31801f05 response_code=200
+2023-07-18:12:18:37,922 DEBUG    [main.py:73] interact_with_gpt(): Success
+2023-07-18:12:18:37,923 DEBUG    [main.py:33] interact_with_GPT: success
+2023-07-18:12:18:37,927 DEBUG    [connectionpool.py:1048] Starting new HTTPS connection (1): api.elevenlabs.io:443
+2023-07-18:12:18:41,93 DEBUG    [connectionpool.py:546] https://api.elevenlabs.io:443 "POST /v1/text-to-speech/MF3mGyEYCl7XYWbV9V6O HTTP/1.1" 200 91742
+2023-07-18:12:18:41,159 DEBUG    [main.py:93] _generate_audio_from_text(): call to Eleven Labs API passed
+2023-07-18:12:18:52,966 DEBUG    [main.py:36] _generate_audio_from_text: success
+2023-07-18:12:18:52,975 DEBUG    [connectionpool.py:1048] Starting new HTTPS connection (1): api.elevenlabs.io:443
+2023-07-18:12:18:53,153 DEBUG    [connectionpool.py:546] https://api.elevenlabs.io:443 "GET /v1/user/subscription HTTP/1.1" 200 419
+2023-07-18:12:18:53,153 DEBUG    [main.py:119] API request : Success
