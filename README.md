@@ -13,9 +13,9 @@ This project contains a Python script that utilizes the OpenAI API to generate r
 
 Clone this repository in your local environment and ensure you have Python 3.7 or later installed. Install the necessary dependencies with the following command:
 
-\`\`\`bash
+```bash
 pip install -r requirements.txt
-\`\`\`
+```
 
 ## Configuration
 
