@@ -4,6 +4,7 @@ This project contains a Python script that utilizes the OpenAI API to generate r
 
 <br />
 <br />
+
 ## Features
 
 1. Interacting with the OpenAI API to obtain responses to user instructions.
@@ -13,6 +14,7 @@ This project contains a Python script that utilizes the OpenAI API to generate r
 
 <br />
 <br />
+
 ## Installation
 
 Clone this repository in your local environment and ensure you have Python 3.7 or later installed. Install the necessary dependencies with the following command:
@@ -23,6 +25,7 @@ pip install -r requirements.txt
 
 <br />
 <br />
+
 ## Configuration
 
 This script requires some environment variables to function correctly:
@@ -34,6 +37,7 @@ These environment variables can be set in a `.env` file.
 
 <br />
 <br />
+
 ## Usage
 
 To use this script, you can run the following command in your terminal:
@@ -44,12 +48,14 @@ python3 main.py
 
 <br />
 <br />
+
 ## Tests
 
 The unit tests for this script are not yet implemented, but feel free to contribute some!
 
 <br />
 <br />
+
 ## Contribution
 
 Contributions to this project are welcome. Feel free to open an issue or submit a pull request.
