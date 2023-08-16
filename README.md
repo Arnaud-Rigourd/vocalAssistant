@@ -1,6 +1,8 @@
 # OpenAI-based Chatbot Assistant
 
-This project contains a Python script that utilizes the OpenAI API to generate responses to user instructions. The generated responses are then converted to audio using the Eleven Labs API, and the number of remaining characters for the current month is displayed.
+This project contains a Python script that utilizes the OpenAI API to generate responses to user instructions. The
+generated responses are then converted to audio using the Eleven Labs API, and the number of remaining characters for
+the current month is displayed.
 
 ## Features
 
@@ -11,11 +13,12 @@ This project contains a Python script that utilizes the OpenAI API to generate r
 
 ## Installation
 
-Clone this repository in your local environment and ensure you have Python 3.7 or later installed. Install the necessary dependencies with the following command:
+Clone this repository in your local environment and ensure you have Python 3.7 or later installed. Install the necessary
+dependencies with the following command:
 
-\`\`\`bash
+```bash
 pip install -r requirements.txt
-\`\`\`
+```
 
 ## Configuration
 
@@ -30,9 +33,9 @@ These environment variables can be set in a `.env` file.
 
 To use this script, you can run the following command in your terminal:
 
-\`\`\`bash
+```bash
 python3 main.py
-\`\`\`
+```
 
 ## Tests
 
