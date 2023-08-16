@@ -23,11 +23,10 @@ dependencies with the following command:
 ```bash
 pip install -r requirements.txt
 ```
-<<<<<<< HEAD
+
 =======
 
 <br />
->>>>>>> b1678e69b6014cc36ab21aa7b0f479bad98e586c
 
 ## Configuration
 
@@ -47,11 +46,10 @@ To use this script, you can run the following command in your terminal:
 ```bash
 python3 main.py
 ```
-<<<<<<< HEAD
+
 =======
 
 <br />
->>>>>>> b1678e69b6014cc36ab21aa7b0f479bad98e586c
 
 ## Tests
 
